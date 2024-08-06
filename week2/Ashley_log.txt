@@ -27,10 +27,3 @@ As I thought, the mathemathics of thise problem was simple, just needing simple 
 
 
 
-Alternate Colours problem
-Intially, I think I will start tackling this problem by putting all three ball longs into an array and iterating over the array k times, removing one every time loop iterates over a specific colour. At first glance the number one problem will be determining when all the balls of a specific coolour has been destroyed and having the script skip over that colour when iterating over the array. 
-
-To have the script not detect balls that have been fully destroyed I have moved from using arrays to vectors, which where I can use the erase function to remove an element fron the vector. Addtionally though the vector would be in a for loop that looped k times, I needed a seperate way to iterate through the individual elements in the vector with out undefined error. An integer “counter” would be used, an if function at the start of each loop would check if the variable was longer then the current length of the vector and make it zero if it was.
-
-Reflection
-I think this problem could of solved quite simply using mathematical logic and/or recursion which would of been overall quicker and/or cheaper then brute forcing it. Overall using vectors to hold both the amount of balls and the colors of the balls was inefficient espically when iterating over them, unless there was an easier way to iterate over the vector.
