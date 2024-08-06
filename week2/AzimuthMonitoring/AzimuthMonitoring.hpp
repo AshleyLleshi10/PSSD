@@ -5,7 +5,7 @@ using namespace std;
 
 class AzimuthMonitoring {
     public:
-        int getAzimuth (vector<string> instructions[]){
+        int getAzimuth (vector<string> instructions){
             int azimuth = 360;
             for (int i = 0; i <= instructions.size(); i++)
             {
@@ -16,30 +16,30 @@ class AzimuthMonitoring {
                     //std::cout << "ping right" << std::endl;
                     azimuth = azimuth + 90;
                 }
-                else if (currInts.length() == 4 && currInts[0] == 'L')
+                else if (c.length() == 4 && c[0] == 'L')
                 {
                     //std::cout << "ping left" << std::endl;   
                     azimuth = azimuth - 90; 
                 }
-                else if currInts.length() == 11)
+                else if c.length() == 11)
                 {
                     //std::cout << "ping 180" << std::endl;   
                     azimuth = azimuth + 180;
                 }
-                else if (currInts == 4 && currInts[0] == 'H')
+                else if (c == 4 && c[0] == 'H')
                 {
                     //std::cout << "ping stop" << std::endl;   
                     break;
                 }
-                else if (currInts.length() >= 6 && currInts[0] == 'L')
+                else if (c.length() >= 6 && c[0] == 'L')
                 {
                     //std::cout << "ping left x" << std::endl;   
-                    azimuth = azimuth - stoi(currInts.erase(0,5));
+                    azimuth = azimuth - stoi(c.erase(0,5));
                 }
-                else if (currInts.length() >= 7 && currInts[0] == 'R')
+                else if (c.length() >= 7 && c[0] == 'R')
                 {
                     //std::cout << "ping right x" << std::endl;   
-                    azimuth = azimuth + stoi(currInts.erase(0,6));
+                    azimuth = azimuth + stoi(c.erase(0,6));
                 }
             }
 
