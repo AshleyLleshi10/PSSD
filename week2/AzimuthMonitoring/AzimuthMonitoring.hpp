@@ -26,7 +26,7 @@ class AzimuthMonitoring {
                     //std::cout << "ping 180" << std::endl;   
                     azimuth = azimuth + 180;
                 }
-                else if (c == 4 && c[0] == 'H')
+                else if (c.length() == 4 && c[0] == 'H')
                 {
                     //std::cout << "ping stop" << std::endl;   
                     break;
