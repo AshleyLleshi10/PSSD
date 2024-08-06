@@ -5,11 +5,11 @@ using namespace std;
 
 class AzimuthMonitoring {
     public:
-        int getAzimuth (vector<std::string> instructions[]){
+        int getAzimuth (vector<string> instructions[]){
             int azimuth = 360;
-            for (int i = 0; i <= instructions->size(); i++)
+            for (int i = 0; i <= instructions.size(); i++)
             {
-                std::string currInts = instructions[i];
+                string c = instructions[i];
                 //std::cout << azimuth << std::endl;
                 if (instructions[i].size() == 5)
                 {
