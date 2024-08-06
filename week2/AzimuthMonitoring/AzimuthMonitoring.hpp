@@ -21,7 +21,7 @@ class AzimuthMonitoring {
                     //std::cout << "ping left" << std::endl;   
                     azimuth = azimuth - 90; 
                 }
-                else if c.length() == 11)
+                else if (c.length() == 11)
                 {
                     //std::cout << "ping 180" << std::endl;   
                     azimuth = azimuth + 180;
