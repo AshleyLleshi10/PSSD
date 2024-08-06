@@ -1,0 +1,36 @@
+Egg cartons problem
+From first glance this problem could be brute forced by using the modulo operator. Before having to fiqure out need if a combination of egg cartons are needed, we can see if the amount of eggs need is a multiple of 8 or 6. 
+
+If a number is both a multiple of 8 and 6 then we calcualte n/6 first as n/6 well always result in a smaller number of cartons needed. Though this is probably not the most efficient way to calcuate this. 
+
+If N is not an exact mutliple of 8 or 6 we will first run n mod 8, then n mod 6 on the remainder to attempt to reach zero. If that does not work we will instead try the reverse: n mod 6 than n mod 8 on the remainder. 
+
+Actually this will not work because using modolous will often leave not enough remainder and leave the problem unsolved when it could have been. 
+
+As an next attempt I will try a brute force approach that uses two for loops to see if every combination of 6 and 8 can make exactly n eggs.
+
+Reflection
+
+The brute force solution using the nested for loop seems to succeced against several tests. I’ve tried my own tests and the example ones givin in the problem statement and so far everything seems correctly. Using brute force to solve this problem was quite simple once I fuqured out to use the nested for loop but a solution that used math or recursion even to solve the problem might have been quicker and/or cheaper. 
+
+
+Azimuth monitoring problem 
+At first glace this problem seems like a simple issue of arithmetic. The script will need to determine the Azimuth based on the instructions, the issue will be parsing the instructions, espically the: “LEFT X” or “RIGHT X”. 
+
+To parse the instructions, I am going to attempt to use mutiple if statements inside a for loop. The diffuculty will be being able to differentiate between “RIGHT” and “RIGHT X” (sames goes for left, etc) So I will instead differentiate the insructions based on the length of the array. To furthur differentiate between “LEFT” and “HALT” I will also compare the first character. 
+
+As an example, if the test has the robot turn left before it has turned right the azimuth will result in a negative number. To correct this, after the for loop ends an if statement will check if the azimuth is negative and add 360 to it. In the scenario that the loop ends and azimuth is higher that 359, 360 will be subtracted from it instead.
+
+Rflection
+
+As I thought, the mathemathics of thise problem was simple, just needing simple artithmetic. The most diffucult part of the problem was parsing the instructions. For the more complex ‘X’ instructions I needed to be able to differentiate them from others  but instead checking the first character and checking of the amount of characters exceeded a specific limit. Then to parse the number from the instruction I used the erase function to remove everything but then number in the instruction and converted it into an int. This was all done with else if statements and am unsure if there was a more efficient way to perform this task. 
+
+
+
+Alternate Colours problem
+Intially, I think I will start tackling this problem by putting all three ball longs into an array and iterating over the array k times, removing one every time loop iterates over a specific colour. At first glance the number one problem will be determining when all the balls of a specific coolour has been destroyed and having the script skip over that colour when iterating over the array. 
+
+To have the script not detect balls that have been fully destroyed I have moved from using arrays to vectors, which where I can use the erase function to remove an element fron the vector. Addtionally though the vector would be in a for loop that looped k times, I needed a seperate way to iterate through the individual elements in the vector with out undefined error. An integer “counter” would be used, an if function at the start of each loop would check if the variable was longer then the current length of the vector and make it zero if it was.
+
+Reflection
+I think this problem could of solved quite simply using mathematical logic and/or recursion which would of been overall quicker and/or cheaper then brute forcing it. Overall using vectors to hold both the amount of balls and the colors of the balls was inefficient espically when iterating over them, unless there was an easier way to iterate over the vector.
