@@ -14,9 +14,9 @@ class AlternateColors{
                     counter = 0;
                 }
 
-                if (ballVector[counter] > 1000000000)
+                if (ballVector[counter] >= 100000000000)
                 {
-                    ballVector[counter] = ballVector[counter] - 100000000;
+                    ballVector[counter] = ballVector[counter] - 99999999000;
                 }
                 ballVector[counter]--;
                 head = colourVector[counter];
